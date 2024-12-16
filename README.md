@@ -30,3 +30,9 @@
 │   └── unit
 ├── tsconfig.json
 └── webpack.config.js
+
+```
+更新日期: 2024年12月15日
+集成wagmi
+pnpm add wagmi viem@2.x @tanstack/react-query
+```
