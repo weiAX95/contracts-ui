@@ -89,7 +89,7 @@
                 <canvas id="test-suites-canvas" width="100" height="100"></canvas>
                 <h2>Test Suites</h2>
                 <div class="list-group">
-                    <p id="test-suites-results" class="list-group-item list-group-item-action">0 passed, 3 total</p>
+                    <p id="test-suites-results" class="list-group-item list-group-item-action">3 passed, 3 total</p>
                 </div>
             </div>
             <!-- /.col-lg-4 -->
@@ -97,7 +97,7 @@
                 <canvas id="tests-canvas" width="100" height="100"></canvas>
                 <h2>Tests</h2>
                 <div class="list-group">
-                    <p id="tests-results" class="list-group-item list-group-item-action">0 passed, 0 total</p>
+                    <p id="tests-results" class="list-group-item list-group-item-action">9 passed, 9 total</p>
                 </div>
             </div>
             <!-- /.col-lg-4 -->
@@ -119,7 +119,6 @@
         <div class="d-none" id="test-summary"></div>
         <div class="d-none" id="test-config">{
   &quot;additionalResultsProcessors&quot;: [],
-  &quot;log&quot;: false,
   &quot;resultDir&quot;: &quot;docs&#x2F;jest-stare&#x2F;&quot;,
   &quot;coverageLink&quot;: &quot;..&#x2F;jest-coverage&#x2F;lcov-report&#x2F;index.html&quot;,
   &quot;resultHtml&quot;: &quot;index.html&quot;,
@@ -129,14 +128,14 @@
             <div class="d-none" id="test-results">{
   &quot;numFailedTestSuites&quot;: 0,
   &quot;numFailedTests&quot;: 0,
-  &quot;numPassedTestSuites&quot;: 0,
-  &quot;numPassedTests&quot;: 0,
+  &quot;numPassedTestSuites&quot;: 3,
+  &quot;numPassedTests&quot;: 9,
   &quot;numPendingTestSuites&quot;: 0,
   &quot;numPendingTests&quot;: 0,
   &quot;numRuntimeErrorTestSuites&quot;: 0,
   &quot;numTodoTests&quot;: 0,
   &quot;numTotalTestSuites&quot;: 3,
-  &quot;numTotalTests&quot;: 0,
+  &quot;numTotalTests&quot;: 9,
   &quot;openHandles&quot;: [],
   &quot;snapshot&quot;: {
     &quot;added&quot;: 0,
@@ -154,9 +153,234 @@
     &quot;unmatched&quot;: 0,
     &quot;updated&quot;: 0
   },
-  &quot;startTime&quot;: 1731222609174,
+  &quot;startTime&quot;: 1734350130743,
   &quot;success&quot;: false,
-  &quot;testResults&quot;: [],
+  &quot;testResults&quot;: [
+    {
+      &quot;leaks&quot;: false,
+      &quot;numFailingTests&quot;: 0,
+      &quot;numPassingTests&quot;: 1,
+      &quot;numPendingTests&quot;: 0,
+      &quot;numTodoTests&quot;: 0,
+      &quot;openHandles&quot;: [],
+      &quot;perfStats&quot;: {
+        &quot;end&quot;: 1734350131161,
+        &quot;runtime&quot;: 208,
+        &quot;slow&quot;: false,
+        &quot;start&quot;: 1734350130953
+      },
+      &quot;skipped&quot;: false,
+      &quot;snapshot&quot;: {
+        &quot;added&quot;: 0,
+        &quot;fileDeleted&quot;: false,
+        &quot;matched&quot;: 0,
+        &quot;unchecked&quot;: 0,
+        &quot;uncheckedKeys&quot;: [],
+        &quot;unmatched&quot;: 0,
+        &quot;updated&quot;: 0
+      },
+      &quot;testFilePath&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;tests&#x2F;unit&#x2F;index.spec.ts&quot;,
+      &quot;testResults&quot;: [
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;综合性的测试&quot;
+          ],
+          &quot;duration&quot;: 2,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;综合性的测试 简单的测试&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 1,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;简单的测试&quot;
+        }
+      ],
+      &quot;failureMessage&quot;: null
+    },
+    {
+      &quot;leaks&quot;: false,
+      &quot;numFailingTests&quot;: 0,
+      &quot;numPassingTests&quot;: 1,
+      &quot;numPendingTests&quot;: 0,
+      &quot;numTodoTests&quot;: 0,
+      &quot;openHandles&quot;: [],
+      &quot;perfStats&quot;: {
+        &quot;end&quot;: 1734350131341,
+        &quot;runtime&quot;: 388,
+        &quot;slow&quot;: false,
+        &quot;start&quot;: 1734350130953
+      },
+      &quot;skipped&quot;: false,
+      &quot;snapshot&quot;: {
+        &quot;added&quot;: 0,
+        &quot;fileDeleted&quot;: false,
+        &quot;matched&quot;: 0,
+        &quot;unchecked&quot;: 0,
+        &quot;uncheckedKeys&quot;: [],
+        &quot;unmatched&quot;: 0,
+        &quot;updated&quot;: 0
+      },
+      &quot;testFilePath&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;tests&#x2F;unit&#x2F;sum.spec.ts&quot;,
+      &quot;testResults&quot;: [
+        {
+          &quot;ancestorTitles&quot;: [],
+          &quot;duration&quot;: 183,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;adds 1 + 2 to equal 3&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;adds 1 + 2 to equal 3&quot;
+        }
+      ],
+      &quot;failureMessage&quot;: null
+    },
+    {
+      &quot;leaks&quot;: false,
+      &quot;numFailingTests&quot;: 0,
+      &quot;numPassingTests&quot;: 7,
+      &quot;numPendingTests&quot;: 0,
+      &quot;numTodoTests&quot;: 0,
+      &quot;openHandles&quot;: [],
+      &quot;perfStats&quot;: {
+        &quot;end&quot;: 1734350131359,
+        &quot;runtime&quot;: 409,
+        &quot;slow&quot;: false,
+        &quot;start&quot;: 1734350130950
+      },
+      &quot;skipped&quot;: false,
+      &quot;snapshot&quot;: {
+        &quot;added&quot;: 0,
+        &quot;fileDeleted&quot;: false,
+        &quot;matched&quot;: 0,
+        &quot;unchecked&quot;: 0,
+        &quot;uncheckedKeys&quot;: [],
+        &quot;unmatched&quot;: 0,
+        &quot;updated&quot;: 0
+      },
+      &quot;testFilePath&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;tests&#x2F;unit&#x2F;address.spec.ts&quot;,
+      &quot;testResults&quot;: [
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;formatAddress&quot;,
+            &quot;valid addresses&quot;
+          ],
+          &quot;duration&quot;: 186,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;formatAddress valid addresses should format address with default chars (3)&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 1,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;should format address with default chars (3)&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;formatAddress&quot;,
+            &quot;valid addresses&quot;
+          ],
+          &quot;duration&quot;: 0,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;formatAddress valid addresses should format address with custom chars length&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;should format address with custom chars length&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;formatAddress&quot;,
+            &quot;valid addresses&quot;
+          ],
+          &quot;duration&quot;: 0,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;formatAddress valid addresses should handle minimum chars value of 1&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 1,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;should handle minimum chars value of 1&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;formatAddress&quot;,
+            &quot;error handling&quot;
+          ],
+          &quot;duration&quot;: 11,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;formatAddress error handling should throw AddressFormatError for non-string input&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 3,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;should throw AddressFormatError for non-string input&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;formatAddress&quot;,
+            &quot;error handling&quot;
+          ],
+          &quot;duration&quot;: 1,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;formatAddress error handling should throw AddressFormatError for address not starting with 0x&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 1,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;should throw AddressFormatError for address not starting with 0x&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;formatAddress&quot;,
+            &quot;error handling&quot;
+          ],
+          &quot;duration&quot;: 0,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;formatAddress error handling should throw AddressFormatError for invalid address length&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 2,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;should throw AddressFormatError for invalid address length&quot;
+        },
+        {
+          &quot;ancestorTitles&quot;: [
+            &quot;formatAddress&quot;,
+            &quot;error handling&quot;
+          ],
+          &quot;duration&quot;: 1,
+          &quot;failureDetails&quot;: [],
+          &quot;failureMessages&quot;: [],
+          &quot;fullName&quot;: &quot;formatAddress error handling should throw AddressFormatError for invalid hex characters&quot;,
+          &quot;invocations&quot;: 1,
+          &quot;location&quot;: null,
+          &quot;numPassingAsserts&quot;: 1,
+          &quot;retryReasons&quot;: [],
+          &quot;status&quot;: &quot;passed&quot;,
+          &quot;title&quot;: &quot;should throw AddressFormatError for invalid hex characters&quot;
+        }
+      ],
+      &quot;failureMessage&quot;: null
+    }
+  ],
   &quot;wasInterrupted&quot;: false
 }</div>
         </div>
@@ -164,12 +388,13 @@
   &quot;bail&quot;: 0,
   &quot;changedFilesWithAncestor&quot;: false,
   &quot;ci&quot;: false,
-  &quot;collectCoverage&quot;: false,
+  &quot;collectCoverage&quot;: true,
   &quot;collectCoverageFrom&quot;: [],
-  &quot;coverageDirectory&quot;: &quot;&#x2F;Users&#x2F;yuanzhijia&#x2F;Desktop&#x2F;yd-interface&#x2F;docs&#x2F;jest-coverage&quot;,
+  &quot;coverageDirectory&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;docs&#x2F;jest-coverage&quot;,
   &quot;coverageProvider&quot;: &quot;babel&quot;,
   &quot;coverageReporters&quot;: [
     &quot;json&quot;,
+    &quot;text&quot;,
     &quot;lcov&quot;,
     &quot;clover&quot;
   ],
@@ -187,12 +412,12 @@
   &quot;expand&quot;: false,
   &quot;findRelatedTests&quot;: false,
   &quot;forceExit&quot;: false,
-  &quot;json&quot;: true,
+  &quot;json&quot;: false,
   &quot;lastCommit&quot;: false,
   &quot;listTests&quot;: false,
   &quot;logHeapUsage&quot;: false,
   &quot;maxConcurrency&quot;: 5,
-  &quot;maxWorkers&quot;: 6,
+  &quot;maxWorkers&quot;: 9,
   &quot;noStackTrace&quot;: false,
   &quot;nonFlagArgs&quot;: [],
   &quot;notify&quot;: false,
@@ -200,8 +425,7 @@
   &quot;onlyChanged&quot;: false,
   &quot;onlyFailures&quot;: false,
   &quot;openHandlesTimeout&quot;: 1000,
-  &quot;outputFile&quot;: &quot;&#x2F;var&#x2F;folders&#x2F;9b&#x2F;k3ck5ycj5kx0b4v58_1gmr180000gn&#x2F;T&#x2F;jest_runner_yd_interface_501.json&quot;,
-  &quot;passWithNoTests&quot;: true,
+  &quot;passWithNoTests&quot;: false,
   &quot;projects&quot;: [],
   &quot;reporters&quot;: [
     [
@@ -209,21 +433,13 @@
       {}
     ],
     [
-      &quot;&#x2F;Users&#x2F;yuanzhijia&#x2F;Desktop&#x2F;yd-interface&#x2F;node_modules&#x2F;.pnpm&#x2F;jest-stare@2.5.2_@popperjs+core@2.11.8_node-notifier@10.0.1&#x2F;node_modules&#x2F;jest-stare&#x2F;lib&#x2F;index.js&quot;,
-      {}
-    ],
-    [
-      &quot;default&quot;,
-      {}
-    ],
-    [
-      &quot;&#x2F;Users&#x2F;yuanzhijia&#x2F;.vscode&#x2F;extensions&#x2F;orta.vscode-jest-6.4.0&#x2F;out&#x2F;reporter.js&quot;,
+      &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;node_modules&#x2F;.pnpm&#x2F;jest-stare@2.5.2_@popperjs+core@2.11.8_node-notifier@10.0.1&#x2F;node_modules&#x2F;jest-stare&#x2F;lib&#x2F;index.js&quot;,
       {}
     ]
   ],
-  &quot;rootDir&quot;: &quot;&#x2F;Users&#x2F;yuanzhijia&#x2F;Desktop&#x2F;yd-interface&quot;,
+  &quot;rootDir&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&quot;,
   &quot;runTestsByPath&quot;: false,
-  &quot;seed&quot;: 1554323423,
+  &quot;seed&quot;: 498103383,
   &quot;skipFilter&quot;: false,
   &quot;snapshotFormat&quot;: {
     &quot;escapeString&quot;: false,
@@ -231,11 +447,11 @@
   },
   &quot;testFailureExitCode&quot;: 1,
   &quot;testPathPattern&quot;: &quot;&quot;,
-  &quot;testSequencer&quot;: &quot;&#x2F;Users&#x2F;yuanzhijia&#x2F;Desktop&#x2F;yd-interface&#x2F;node_modules&#x2F;.pnpm&#x2F;@jest+test-sequencer@29.7.0&#x2F;node_modules&#x2F;@jest&#x2F;test-sequencer&#x2F;build&#x2F;index.js&quot;,
+  &quot;testSequencer&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;node_modules&#x2F;.pnpm&#x2F;@jest+test-sequencer@29.7.0&#x2F;node_modules&#x2F;@jest&#x2F;test-sequencer&#x2F;build&#x2F;index.js&quot;,
   &quot;updateSnapshot&quot;: &quot;new&quot;,
-  &quot;useStderr&quot;: true,
+  &quot;useStderr&quot;: false,
   &quot;watch&quot;: false,
-  &quot;watchAll&quot;: true,
+  &quot;watchAll&quot;: false,
   &quot;watchman&quot;: true,
   &quot;workerThreads&quot;: false
 }</div>

@@ -36,6 +36,7 @@
     "immer": "^10.1.1",
     "jotai": "^2.10.1",
     "jotai-immer": "^0.4.1",
+    "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet-async": "^2.0.5",
@@ -45,6 +46,7 @@
   },
   "packageManager": "pnpm@9.10.0+sha512.73a29afa36a0d092ece5271de5177ecbf8318d454ecd701343131b8ebc0c1a91c487da46ab77c8e596d6acf1461e3594ced4becedf8921b074fbd8653ed7051c",
   "devDependencies": {
+    "@shadcn/ui": "^0.0.4",
     "@soda/friendly-errors-webpack-plugin": "^1.8.1",
     "@swc/core": "^1.7.40",
     "@swc/jest": "^0.2.37",

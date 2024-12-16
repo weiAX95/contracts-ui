@@ -36,3 +36,10 @@
 集成wagmi
 pnpm add wagmi viem@2.x @tanstack/react-query
 ```
+
+```
+更新日期: 2024年12月15日
+完成WalletConnect连接钱包
+集成shadcn-ui
+shadcn-ui@latest init
+```
