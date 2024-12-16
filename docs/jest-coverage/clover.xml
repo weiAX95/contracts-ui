@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1734350131408" clover="3.2.0">
-  <project timestamp="1734350131408" name="All files">
+<coverage generated="1734350288093" clover="3.2.0">
+  <project timestamp="1734350288093" name="All files">
     <metrics statements="1" coveredstatements="1" conditionals="21" coveredconditionals="16" methods="8" coveredmethods="8" elements="30" coveredelements="25" complexity="0" loc="1" ncloc="1" packages="1" files="1" classes="1"/>
     <file name="index.ts" path="/Users/zhh/Desktop/contracts-ui/src/utils/index.ts">
       <metrics statements="1" coveredstatements="1" conditionals="21" coveredconditionals="16" methods="8" coveredmethods="8"/>

@@ -1,14 +1,14 @@
 {
-  "numFailedTestSuites": 0,
+  "numFailedTestSuites": 1,
   "numFailedTests": 0,
-  "numPassedTestSuites": 3,
-  "numPassedTests": 9,
+  "numPassedTestSuites": 2,
+  "numPassedTests": 8,
   "numPendingTestSuites": 0,
   "numPendingTests": 0,
-  "numRuntimeErrorTestSuites": 0,
+  "numRuntimeErrorTestSuites": 1,
   "numTodoTests": 0,
   "numTotalTestSuites": 3,
-  "numTotalTests": 9,
+  "numTotalTests": 8,
   "openHandles": [],
   "snapshot": {
     "added": 0,
@@ -26,93 +26,9 @@
     "unmatched": 0,
     "updated": 0
   },
-  "startTime": 1734350130743,
+  "startTime": 1734350287831,
   "success": false,
   "testResults": [
-    {
-      "leaks": false,
-      "numFailingTests": 0,
-      "numPassingTests": 1,
-      "numPendingTests": 0,
-      "numTodoTests": 0,
-      "openHandles": [],
-      "perfStats": {
-        "end": 1734350131161,
-        "runtime": 208,
-        "slow": false,
-        "start": 1734350130953
-      },
-      "skipped": false,
-      "snapshot": {
-        "added": 0,
-        "fileDeleted": false,
-        "matched": 0,
-        "unchecked": 0,
-        "uncheckedKeys": [],
-        "unmatched": 0,
-        "updated": 0
-      },
-      "testFilePath": "/Users/zhh/Desktop/contracts-ui/tests/unit/index.spec.ts",
-      "testResults": [
-        {
-          "ancestorTitles": [
-            "综合性的测试"
-          ],
-          "duration": 2,
-          "failureDetails": [],
-          "failureMessages": [],
-          "fullName": "综合性的测试 简单的测试",
-          "invocations": 1,
-          "location": null,
-          "numPassingAsserts": 1,
-          "retryReasons": [],
-          "status": "passed",
-          "title": "简单的测试"
-        }
-      ],
-      "failureMessage": null
-    },
-    {
-      "leaks": false,
-      "numFailingTests": 0,
-      "numPassingTests": 1,
-      "numPendingTests": 0,
-      "numTodoTests": 0,
-      "openHandles": [],
-      "perfStats": {
-        "end": 1734350131341,
-        "runtime": 388,
-        "slow": false,
-        "start": 1734350130953
-      },
-      "skipped": false,
-      "snapshot": {
-        "added": 0,
-        "fileDeleted": false,
-        "matched": 0,
-        "unchecked": 0,
-        "uncheckedKeys": [],
-        "unmatched": 0,
-        "updated": 0
-      },
-      "testFilePath": "/Users/zhh/Desktop/contracts-ui/tests/unit/sum.spec.ts",
-      "testResults": [
-        {
-          "ancestorTitles": [],
-          "duration": 183,
-          "failureDetails": [],
-          "failureMessages": [],
-          "fullName": "adds 1 + 2 to equal 3",
-          "invocations": 1,
-          "location": null,
-          "numPassingAsserts": 2,
-          "retryReasons": [],
-          "status": "passed",
-          "title": "adds 1 + 2 to equal 3"
-        }
-      ],
-      "failureMessage": null
-    },
     {
       "leaks": false,
       "numFailingTests": 0,
@@ -121,10 +37,10 @@
       "numTodoTests": 0,
       "openHandles": [],
       "perfStats": {
-        "end": 1734350131359,
-        "runtime": 409,
+        "end": 1734350287985,
+        "runtime": 100,
         "slow": false,
-        "start": 1734350130950
+        "start": 1734350287885
       },
       "skipped": false,
       "snapshot": {
@@ -143,7 +59,7 @@
             "formatAddress",
             "valid addresses"
           ],
-          "duration": 186,
+          "duration": 6,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "formatAddress valid addresses should format address with default chars (3)",
@@ -159,7 +75,7 @@
             "formatAddress",
             "valid addresses"
           ],
-          "duration": 0,
+          "duration": 1,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "formatAddress valid addresses should format address with custom chars length",
@@ -191,7 +107,7 @@
             "formatAddress",
             "error handling"
           ],
-          "duration": 11,
+          "duration": 13,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "formatAddress error handling should throw AddressFormatError for non-string input",
@@ -239,7 +155,7 @@
             "formatAddress",
             "error handling"
           ],
-          "duration": 1,
+          "duration": 0,
           "failureDetails": [],
           "failureMessages": [],
           "fullName": "formatAddress error handling should throw AddressFormatError for invalid hex characters",
@@ -252,6 +168,78 @@
         }
       ],
       "failureMessage": null
+    },
+    {
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 1,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 1734350288014,
+        "runtime": 14,
+        "slow": false,
+        "start": 1734350288000
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testFilePath": "/Users/zhh/Desktop/contracts-ui/tests/unit/sum.spec.ts",
+      "testResults": [
+        {
+          "ancestorTitles": [],
+          "duration": 0,
+          "failureDetails": [],
+          "failureMessages": [],
+          "fullName": "adds 1 + 2 to equal 3",
+          "invocations": 1,
+          "location": null,
+          "numPassingAsserts": 2,
+          "retryReasons": [],
+          "status": "passed",
+          "title": "adds 1 + 2 to equal 3"
+        }
+      ],
+      "failureMessage": null
+    },
+    {
+      "failureMessage": "  \u001b[1m● \u001b[22mTest suite failed to run\n\n    Your test suite must contain at least one test.\n\n      \u001b[2mat onResult (\u001b[22mnode_modules/.pnpm/@jest+core@29.7.0_babel-plugin-macros@3.1.0_node-notifier@10.0.1/node_modules/@jest/core/build/TestScheduler.js\u001b[2m:133:18)\u001b[22m\n      \u001b[2mat \u001b[22mnode_modules/.pnpm/@jest+core@29.7.0_babel-plugin-macros@3.1.0_node-notifier@10.0.1/node_modules/@jest/core/build/TestScheduler.js\u001b[2m:254:19\u001b[22m\n      \u001b[2mat \u001b[22mnode_modules/.pnpm/emittery@0.13.1/node_modules/emittery/index.js\u001b[2m:363:13\u001b[22m\n          at Array.map (<anonymous>)\n      \u001b[2mat Emittery.emit (\u001b[22mnode_modules/.pnpm/emittery@0.13.1/node_modules/emittery/index.js\u001b[2m:361:23)\u001b[22m\n",
+      "leaks": false,
+      "numFailingTests": 0,
+      "numPassingTests": 0,
+      "numPendingTests": 0,
+      "numTodoTests": 0,
+      "openHandles": [],
+      "perfStats": {
+        "end": 0,
+        "runtime": 0,
+        "slow": false,
+        "start": 0
+      },
+      "skipped": false,
+      "snapshot": {
+        "added": 0,
+        "fileDeleted": false,
+        "matched": 0,
+        "unchecked": 0,
+        "uncheckedKeys": [],
+        "unmatched": 0,
+        "updated": 0
+      },
+      "testExecError": {
+        "message": "Your test suite must contain at least one test.",
+        "stack": "Error: Your test suite must contain at least one test.\n    at onResult (/Users/zhh/Desktop/contracts-ui/node_modules/.pnpm/@jest+core@29.7.0_babel-plugin-macros@3.1.0_node-notifier@10.0.1/node_modules/@jest/core/build/TestScheduler.js:133:18)\n    at /Users/zhh/Desktop/contracts-ui/node_modules/.pnpm/@jest+core@29.7.0_babel-plugin-macros@3.1.0_node-notifier@10.0.1/node_modules/@jest/core/build/TestScheduler.js:254:19\n    at /Users/zhh/Desktop/contracts-ui/node_modules/.pnpm/emittery@0.13.1/node_modules/emittery/index.js:363:13\n    at Array.map (<anonymous>)\n    at Emittery.emit (/Users/zhh/Desktop/contracts-ui/node_modules/.pnpm/emittery@0.13.1/node_modules/emittery/index.js:361:23)"
+      },
+      "testFilePath": "/Users/zhh/Desktop/contracts-ui/tests/unit/index.spec.ts",
+      "testResults": []
     }
   ],
   "wasInterrupted": false
