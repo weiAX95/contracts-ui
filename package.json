@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "clent:dev": "webpack --mode development",
-    "clent:server": "webpack serve --mode development",
-    "clent:prod": "webpack --mode production",
+    "client:dev": "webpack --mode development",
+    "client:server": "webpack serve --mode development",
+    "client:prod": "webpack --mode production",
     "test": "jest --collectCoverage --reporters default jest-stare --passWithNoTests",
     "lint:fix": "tsc --noEmit & eslint ./src --ext .ts,.tsx --fix",
     "lint": "eslint . --ext .ts,.tsx",
