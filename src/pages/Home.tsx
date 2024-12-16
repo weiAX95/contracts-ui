@@ -38,7 +38,9 @@ const HomePage = () => {
       if (window.ethereum) {
         try {
           // 获取当前chainId
-          const chainId = await window.ethereum.request({ method: 'eth_chainId' }) as keyof typeof NETWORKS;
+          const chainId = (await window.ethereum.request({
+            method: 'eth_chainId',
+          })) as keyof typeof NETWORKS;
           // 获取当前区块
           const blockNumber = await window.ethereum.request({ method: 'eth_blockNumber' });
           // 获取账户以检查是否已连接
@@ -67,12 +69,12 @@ const HomePage = () => {
 
     // 监听网络变化
     if (window.ethereum) {
-      window.ethereum.on('chainChanged', (chainId: string) => {
+      window.ethereum.on('chainChanged', () => {
         checkNetwork();
       });
 
       // 监听账户变化
-      window.ethereum.on('accountsChanged', (accounts: string[]) => {
+      window.ethereum.on('accountsChanged', () => {
         checkNetwork();
       });
     }
@@ -90,18 +92,18 @@ const HomePage = () => {
     if (!window.ethereum) {
       return {
         text: '未安装钱包',
-        class: 'bg-red-100 text-red-700'
+        class: 'bg-red-100 text-red-700',
       };
     }
     if (!networkStatus.isConnected) {
       return {
         text: '未连接',
-        class: 'bg-yellow-100 text-yellow-700'
+        class: 'bg-yellow-100 text-yellow-700',
       };
     }
     return {
       text: '已连接',
-      class: 'bg-green-100 text-green-700'
+      class: 'bg-green-100 text-green-700',
     };
   };
 

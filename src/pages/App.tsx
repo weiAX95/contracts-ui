@@ -2,15 +2,14 @@ import { createTheme, StyledEngineProvider, ThemeProvider } from '@mui/material/
 import { createContext, useMemo, useState } from 'react';
 import { useRoutes } from 'react-router-dom';
 import routes from '@/routes/index';
-const ColorModeContext = createContext({ toggleColorMode: () => { } });
+const ColorModeContext = createContext({ toggleColorMode: () => {} });
 import { HelmetProvider } from 'react-helmet-async';
 
 import { WagmiConfig } from 'wagmi';
-import { config } from "@/utils/config";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { config } from '@/utils/config';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 const App = () => {
   const [mode, setMode] = useState<'light' | 'dark'>('light');
   const routing = useRoutes(routes);
