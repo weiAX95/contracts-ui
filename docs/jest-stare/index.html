@@ -89,7 +89,7 @@
                 <canvas id="test-suites-canvas" width="100" height="100"></canvas>
                 <h2>Test Suites</h2>
                 <div class="list-group">
-                    <p id="test-suites-results" class="list-group-item list-group-item-action">2 passed, 3 total</p>
+                    <p id="test-suites-results" class="list-group-item list-group-item-action">0 passed, 0 total</p>
                 </div>
             </div>
             <!-- /.col-lg-4 -->
@@ -97,7 +97,7 @@
                 <canvas id="tests-canvas" width="100" height="100"></canvas>
                 <h2>Tests</h2>
                 <div class="list-group">
-                    <p id="tests-results" class="list-group-item list-group-item-action">8 passed, 8 total</p>
+                    <p id="tests-results" class="list-group-item list-group-item-action">0 passed, 0 total</p>
                 </div>
             </div>
             <!-- /.col-lg-4 -->
@@ -126,16 +126,16 @@
 }</div>
         <div id="accordion">
             <div class="d-none" id="test-results">{
-  &quot;numFailedTestSuites&quot;: 1,
+  &quot;numFailedTestSuites&quot;: 0,
   &quot;numFailedTests&quot;: 0,
-  &quot;numPassedTestSuites&quot;: 2,
-  &quot;numPassedTests&quot;: 8,
+  &quot;numPassedTestSuites&quot;: 0,
+  &quot;numPassedTests&quot;: 0,
   &quot;numPendingTestSuites&quot;: 0,
   &quot;numPendingTests&quot;: 0,
-  &quot;numRuntimeErrorTestSuites&quot;: 1,
+  &quot;numRuntimeErrorTestSuites&quot;: 0,
   &quot;numTodoTests&quot;: 0,
-  &quot;numTotalTestSuites&quot;: 3,
-  &quot;numTotalTests&quot;: 8,
+  &quot;numTotalTestSuites&quot;: 0,
+  &quot;numTotalTests&quot;: 0,
   &quot;openHandles&quot;: [],
   &quot;snapshot&quot;: {
     &quot;added&quot;: 0,
@@ -153,222 +153,9 @@
     &quot;unmatched&quot;: 0,
     &quot;updated&quot;: 0
   },
-  &quot;startTime&quot;: 1734350287831,
+  &quot;startTime&quot;: 1734494405437,
   &quot;success&quot;: false,
-  &quot;testResults&quot;: [
-    {
-      &quot;leaks&quot;: false,
-      &quot;numFailingTests&quot;: 0,
-      &quot;numPassingTests&quot;: 7,
-      &quot;numPendingTests&quot;: 0,
-      &quot;numTodoTests&quot;: 0,
-      &quot;openHandles&quot;: [],
-      &quot;perfStats&quot;: {
-        &quot;end&quot;: 1734350287985,
-        &quot;runtime&quot;: 100,
-        &quot;slow&quot;: false,
-        &quot;start&quot;: 1734350287885
-      },
-      &quot;skipped&quot;: false,
-      &quot;snapshot&quot;: {
-        &quot;added&quot;: 0,
-        &quot;fileDeleted&quot;: false,
-        &quot;matched&quot;: 0,
-        &quot;unchecked&quot;: 0,
-        &quot;uncheckedKeys&quot;: [],
-        &quot;unmatched&quot;: 0,
-        &quot;updated&quot;: 0
-      },
-      &quot;testFilePath&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;tests&#x2F;unit&#x2F;address.spec.ts&quot;,
-      &quot;testResults&quot;: [
-        {
-          &quot;ancestorTitles&quot;: [
-            &quot;formatAddress&quot;,
-            &quot;valid addresses&quot;
-          ],
-          &quot;duration&quot;: 6,
-          &quot;failureDetails&quot;: [],
-          &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;formatAddress valid addresses should format address with default chars (3)&quot;,
-          &quot;invocations&quot;: 1,
-          &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 1,
-          &quot;retryReasons&quot;: [],
-          &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;should format address with default chars (3)&quot;
-        },
-        {
-          &quot;ancestorTitles&quot;: [
-            &quot;formatAddress&quot;,
-            &quot;valid addresses&quot;
-          ],
-          &quot;duration&quot;: 1,
-          &quot;failureDetails&quot;: [],
-          &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;formatAddress valid addresses should format address with custom chars length&quot;,
-          &quot;invocations&quot;: 1,
-          &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 2,
-          &quot;retryReasons&quot;: [],
-          &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;should format address with custom chars length&quot;
-        },
-        {
-          &quot;ancestorTitles&quot;: [
-            &quot;formatAddress&quot;,
-            &quot;valid addresses&quot;
-          ],
-          &quot;duration&quot;: 0,
-          &quot;failureDetails&quot;: [],
-          &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;formatAddress valid addresses should handle minimum chars value of 1&quot;,
-          &quot;invocations&quot;: 1,
-          &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 1,
-          &quot;retryReasons&quot;: [],
-          &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;should handle minimum chars value of 1&quot;
-        },
-        {
-          &quot;ancestorTitles&quot;: [
-            &quot;formatAddress&quot;,
-            &quot;error handling&quot;
-          ],
-          &quot;duration&quot;: 13,
-          &quot;failureDetails&quot;: [],
-          &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;formatAddress error handling should throw AddressFormatError for non-string input&quot;,
-          &quot;invocations&quot;: 1,
-          &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 3,
-          &quot;retryReasons&quot;: [],
-          &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;should throw AddressFormatError for non-string input&quot;
-        },
-        {
-          &quot;ancestorTitles&quot;: [
-            &quot;formatAddress&quot;,
-            &quot;error handling&quot;
-          ],
-          &quot;duration&quot;: 1,
-          &quot;failureDetails&quot;: [],
-          &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;formatAddress error handling should throw AddressFormatError for address not starting with 0x&quot;,
-          &quot;invocations&quot;: 1,
-          &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 1,
-          &quot;retryReasons&quot;: [],
-          &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;should throw AddressFormatError for address not starting with 0x&quot;
-        },
-        {
-          &quot;ancestorTitles&quot;: [
-            &quot;formatAddress&quot;,
-            &quot;error handling&quot;
-          ],
-          &quot;duration&quot;: 0,
-          &quot;failureDetails&quot;: [],
-          &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;formatAddress error handling should throw AddressFormatError for invalid address length&quot;,
-          &quot;invocations&quot;: 1,
-          &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 2,
-          &quot;retryReasons&quot;: [],
-          &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;should throw AddressFormatError for invalid address length&quot;
-        },
-        {
-          &quot;ancestorTitles&quot;: [
-            &quot;formatAddress&quot;,
-            &quot;error handling&quot;
-          ],
-          &quot;duration&quot;: 0,
-          &quot;failureDetails&quot;: [],
-          &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;formatAddress error handling should throw AddressFormatError for invalid hex characters&quot;,
-          &quot;invocations&quot;: 1,
-          &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 1,
-          &quot;retryReasons&quot;: [],
-          &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;should throw AddressFormatError for invalid hex characters&quot;
-        }
-      ],
-      &quot;failureMessage&quot;: null
-    },
-    {
-      &quot;leaks&quot;: false,
-      &quot;numFailingTests&quot;: 0,
-      &quot;numPassingTests&quot;: 1,
-      &quot;numPendingTests&quot;: 0,
-      &quot;numTodoTests&quot;: 0,
-      &quot;openHandles&quot;: [],
-      &quot;perfStats&quot;: {
-        &quot;end&quot;: 1734350288014,
-        &quot;runtime&quot;: 14,
-        &quot;slow&quot;: false,
-        &quot;start&quot;: 1734350288000
-      },
-      &quot;skipped&quot;: false,
-      &quot;snapshot&quot;: {
-        &quot;added&quot;: 0,
-        &quot;fileDeleted&quot;: false,
-        &quot;matched&quot;: 0,
-        &quot;unchecked&quot;: 0,
-        &quot;uncheckedKeys&quot;: [],
-        &quot;unmatched&quot;: 0,
-        &quot;updated&quot;: 0
-      },
-      &quot;testFilePath&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;tests&#x2F;unit&#x2F;sum.spec.ts&quot;,
-      &quot;testResults&quot;: [
-        {
-          &quot;ancestorTitles&quot;: [],
-          &quot;duration&quot;: 0,
-          &quot;failureDetails&quot;: [],
-          &quot;failureMessages&quot;: [],
-          &quot;fullName&quot;: &quot;adds 1 + 2 to equal 3&quot;,
-          &quot;invocations&quot;: 1,
-          &quot;location&quot;: null,
-          &quot;numPassingAsserts&quot;: 2,
-          &quot;retryReasons&quot;: [],
-          &quot;status&quot;: &quot;passed&quot;,
-          &quot;title&quot;: &quot;adds 1 + 2 to equal 3&quot;
-        }
-      ],
-      &quot;failureMessage&quot;: null
-    },
-    {
-      &quot;failureMessage&quot;: &quot;  \u001b[1m● \u001b[22mTest suite failed to run\n\n    Your test suite must contain at least one test.\n\n      \u001b[2mat onResult (\u001b[22mnode_modules&#x2F;.pnpm&#x2F;@jest+core@29.7.0_babel-plugin-macros@3.1.0_node-notifier@10.0.1&#x2F;node_modules&#x2F;@jest&#x2F;core&#x2F;build&#x2F;TestScheduler.js\u001b[2m:133:18)\u001b[22m\n      \u001b[2mat \u001b[22mnode_modules&#x2F;.pnpm&#x2F;@jest+core@29.7.0_babel-plugin-macros@3.1.0_node-notifier@10.0.1&#x2F;node_modules&#x2F;@jest&#x2F;core&#x2F;build&#x2F;TestScheduler.js\u001b[2m:254:19\u001b[22m\n      \u001b[2mat \u001b[22mnode_modules&#x2F;.pnpm&#x2F;emittery@0.13.1&#x2F;node_modules&#x2F;emittery&#x2F;index.js\u001b[2m:363:13\u001b[22m\n          at Array.map (&lt;anonymous&gt;)\n      \u001b[2mat Emittery.emit (\u001b[22mnode_modules&#x2F;.pnpm&#x2F;emittery@0.13.1&#x2F;node_modules&#x2F;emittery&#x2F;index.js\u001b[2m:361:23)\u001b[22m\n&quot;,
-      &quot;leaks&quot;: false,
-      &quot;numFailingTests&quot;: 0,
-      &quot;numPassingTests&quot;: 0,
-      &quot;numPendingTests&quot;: 0,
-      &quot;numTodoTests&quot;: 0,
-      &quot;openHandles&quot;: [],
-      &quot;perfStats&quot;: {
-        &quot;end&quot;: 0,
-        &quot;runtime&quot;: 0,
-        &quot;slow&quot;: false,
-        &quot;start&quot;: 0
-      },
-      &quot;skipped&quot;: false,
-      &quot;snapshot&quot;: {
-        &quot;added&quot;: 0,
-        &quot;fileDeleted&quot;: false,
-        &quot;matched&quot;: 0,
-        &quot;unchecked&quot;: 0,
-        &quot;uncheckedKeys&quot;: [],
-        &quot;unmatched&quot;: 0,
-        &quot;updated&quot;: 0
-      },
-      &quot;testExecError&quot;: {
-        &quot;message&quot;: &quot;Your test suite must contain at least one test.&quot;,
-        &quot;stack&quot;: &quot;Error: Your test suite must contain at least one test.\n    at onResult (&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;node_modules&#x2F;.pnpm&#x2F;@jest+core@29.7.0_babel-plugin-macros@3.1.0_node-notifier@10.0.1&#x2F;node_modules&#x2F;@jest&#x2F;core&#x2F;build&#x2F;TestScheduler.js:133:18)\n    at &#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;node_modules&#x2F;.pnpm&#x2F;@jest+core@29.7.0_babel-plugin-macros@3.1.0_node-notifier@10.0.1&#x2F;node_modules&#x2F;@jest&#x2F;core&#x2F;build&#x2F;TestScheduler.js:254:19\n    at &#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;node_modules&#x2F;.pnpm&#x2F;emittery@0.13.1&#x2F;node_modules&#x2F;emittery&#x2F;index.js:363:13\n    at Array.map (&lt;anonymous&gt;)\n    at Emittery.emit (&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;node_modules&#x2F;.pnpm&#x2F;emittery@0.13.1&#x2F;node_modules&#x2F;emittery&#x2F;index.js:361:23)&quot;
-      },
-      &quot;testFilePath&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;tests&#x2F;unit&#x2F;index.spec.ts&quot;,
-      &quot;testResults&quot;: []
-    }
-  ],
+  &quot;testResults&quot;: [],
   &quot;wasInterrupted&quot;: false
 }</div>
         </div>
@@ -378,7 +165,7 @@
   &quot;ci&quot;: false,
   &quot;collectCoverage&quot;: true,
   &quot;collectCoverageFrom&quot;: [],
-  &quot;coverageDirectory&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;docs&#x2F;jest-coverage&quot;,
+  &quot;coverageDirectory&quot;: &quot;C:\\Users\\13485\\Desktop\\yd-interface (1)\\docs\\jest-coverage&quot;,
   &quot;coverageProvider&quot;: &quot;babel&quot;,
   &quot;coverageReporters&quot;: [
     &quot;json&quot;,
@@ -405,7 +192,7 @@
   &quot;listTests&quot;: false,
   &quot;logHeapUsage&quot;: false,
   &quot;maxConcurrency&quot;: 5,
-  &quot;maxWorkers&quot;: 9,
+  &quot;maxWorkers&quot;: 15,
   &quot;noStackTrace&quot;: false,
   &quot;nonFlagArgs&quot;: [],
   &quot;notify&quot;: false,
@@ -413,7 +200,7 @@
   &quot;onlyChanged&quot;: false,
   &quot;onlyFailures&quot;: false,
   &quot;openHandlesTimeout&quot;: 1000,
-  &quot;passWithNoTests&quot;: false,
+  &quot;passWithNoTests&quot;: true,
   &quot;projects&quot;: [],
   &quot;reporters&quot;: [
     [
@@ -421,13 +208,13 @@
       {}
     ],
     [
-      &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;node_modules&#x2F;.pnpm&#x2F;jest-stare@2.5.2_@popperjs+core@2.11.8_node-notifier@10.0.1&#x2F;node_modules&#x2F;jest-stare&#x2F;lib&#x2F;index.js&quot;,
+      &quot;C:\\Users\\13485\\Desktop\\yd-interface (1)\\node_modules\\.pnpm\\jest-stare@2.5.2_@popperjs+core@2.11.8_node-notifier@10.0.1\\node_modules\\jest-stare\\lib\\index.js&quot;,
       {}
     ]
   ],
-  &quot;rootDir&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&quot;,
+  &quot;rootDir&quot;: &quot;C:\\Users\\13485\\Desktop\\yd-interface (1)&quot;,
   &quot;runTestsByPath&quot;: false,
-  &quot;seed&quot;: -1344756805,
+  &quot;seed&quot;: -601840883,
   &quot;skipFilter&quot;: false,
   &quot;snapshotFormat&quot;: {
     &quot;escapeString&quot;: false,
@@ -435,7 +222,7 @@
   },
   &quot;testFailureExitCode&quot;: 1,
   &quot;testPathPattern&quot;: &quot;&quot;,
-  &quot;testSequencer&quot;: &quot;&#x2F;Users&#x2F;zhh&#x2F;Desktop&#x2F;contracts-ui&#x2F;node_modules&#x2F;.pnpm&#x2F;@jest+test-sequencer@29.7.0&#x2F;node_modules&#x2F;@jest&#x2F;test-sequencer&#x2F;build&#x2F;index.js&quot;,
+  &quot;testSequencer&quot;: &quot;C:\\Users\\13485\\Desktop\\yd-interface (1)\\node_modules\\.pnpm\\@jest+test-sequencer@29.7.0\\node_modules\\@jest\\test-sequencer\\build\\index.js&quot;,
   &quot;updateSnapshot&quot;: &quot;new&quot;,
   &quot;useStderr&quot;: false,
   &quot;watch&quot;: false,
