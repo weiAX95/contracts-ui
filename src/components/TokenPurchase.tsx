@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
-import { YiDengToken, YiDengToken__factory } from "@/abi/index"
+// import { YiDengToken, YiDengToken__factory } from '@/abi/index';
 // import { ethers } from "ethers";
-import { Web3Provider } from "@ethersproject/providers";
+import { Web3Provider } from '@ethersproject/providers';
 const TokenPurchase = () => {
-  const [balance, setBalance] = useState<string | null>(null);
-  const [address, setAddress] = useState<string | null>(null);  // 添加 address 状态
+  // const [balance, setBalance] = useState<string | null>(null);
+  const [, setAddress] = useState<string | null>(null); // 添加 address 状态
 
   useEffect(() => {
     const fetchBalance = async () => {
       const provider = new Web3Provider(window.ethereum);
       const accounts = await provider.listAccounts(); // 获取用户的账户列表
       const userAddress = accounts[0]; // 选择第一个账户
-      setAddress(userAddress);  // 设置用户地址
+      setAddress(userAddress); // 设置用户地址
       const gasPrice = await provider.getGasPrice();
-      console.log(gasPrice, "gas"); // 获取当前的 gas 价格
+      console.log(gasPrice, 'gas'); // 获取当前的 gas 价格
       if (userAddress) {
         const balance = await provider.getBalance(userAddress);
         console.log(balance);
@@ -25,7 +25,7 @@ const TokenPurchase = () => {
     if (window.ethereum) {
       fetchBalance();
     } else {
-      console.log("Please install MetaMask!");
+      console.log('Please install MetaMask!');
     }
   }, []);
   return (
@@ -54,6 +54,4 @@ const TokenPurchase = () => {
   );
 };
 
-
 export default TokenPurchase;
-
