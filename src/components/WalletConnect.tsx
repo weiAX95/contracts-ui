@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAccount, useConnect, useDisconnect, useBalance, useContractRead } from 'wagmi';
 import { injected } from 'wagmi/connectors';
 import { Wallet, LogOut, Coins } from 'lucide-react';
@@ -11,6 +11,8 @@ const WalletConnect = () => {
   const { data: balance } = useBalance({
     address: address,
   });
+
+  const [isHovered, setIsHovered] = useState(false); // 新增状态来控制鼠标悬停状态
 
   const handleConnect = async () => {
     try {
@@ -37,23 +39,29 @@ const WalletConnect = () => {
 
   if (isConnected) {
     return (
-      <div className="max-w-full mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-        <div className="p-6 space-y-6">
-          <div className="flex items-center justify-between border-b pb-4">
+      <div className="max-w-full  bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="p-1 space-y-6 float-left">
+          {isHovered && <div className="flex items-center justify-between border-b pb-4">
             <div>
               <h2 className="text-xl font-semibold text-gray-800">Wallet Status</h2>
               <p className="text-sm text-gray-500">Connected to MetaMask</p>
             </div>
             <Wallet className="h-8 w-8 text-blue-500" />
-          </div>
+          </div>}
 
-          <div className="space-y-4">
-            <div className="bg-gray-50 p-4 rounded-lg">
+          <div
+            className="space-y-4"
+            onMouseEnter={() => setIsHovered(true)} // 鼠标移入时
+            onMouseLeave={() => setIsHovered(false)} // 鼠标移出时
+          >
+            <div className="bg-gray-50 p-2 rounded-lg">
               <p className="text-sm font-medium text-gray-600">Account Address</p>
-              <p className="font-mono text-sm mt-1 text-gray-800 break-all">{address}</p>
+              <p className="font-mono text-sm mt-1 text-gray-800 break-all">
+                {isHovered ? address : `${address?.slice(0, 6)}...${address.slice(-4)}`}
+              </p>
             </div>
 
-            {balance && (
+            {balance && isHovered && (
               <div className="bg-blue-50 p-4 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
@@ -67,7 +75,7 @@ const WalletConnect = () => {
               </div>
             )}
 
-            {tokenBalance != null && (
+            {tokenBalance != null && isHovered && (
               <div className="bg-indigo-50 p-4 rounded-lg">
                 <div className="flex items-center justify-between">
                   <div>
@@ -82,13 +90,13 @@ const WalletConnect = () => {
             )}
           </div>
 
-          <button
+          {isHovered && <button
             onClick={() => disconnect()}
             className="w-full flex items-center justify-end gap-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium"
           >
             <LogOut className="h-5 w-5" />
             Disconnect Wallet
-          </button>
+          </button>}
         </div>
       </div>
     );

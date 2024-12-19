@@ -15,6 +15,11 @@ const Header = () => {
               测试页面
             </Link>
           </li>
+          <li>
+            <Link to="/course/list" className="text-gray-700 hover:text-blue-600 font-medium">
+              课程列表
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
