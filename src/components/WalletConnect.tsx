@@ -57,7 +57,7 @@ const WalletConnect = () => {
             <div className="bg-gray-50 p-2 rounded-lg">
               <p className="text-sm font-medium text-gray-600">Account Address</p>
               <p className="font-mono text-sm mt-1 text-gray-800 break-all">
-                {isHovered ? address : `${address?.slice(0, 6)}...${address.slice(-4)}`}
+                {isHovered ? address : `${address?.slice(0, 6)}...${address?.slice(-4)}`}
               </p>
             </div>
 
