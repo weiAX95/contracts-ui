@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAccount, useConnect, useDisconnect, useBalance, useContractRead } from 'wagmi';
+import { ethers } from 'ethers';
 import { injected } from 'wagmi/connectors';
 import { Wallet, LogOut, Coins } from 'lucide-react';
 import YiDengToken from '@/abi/YiDengToken.json';
@@ -13,6 +14,13 @@ const WalletConnect = () => {
   });
 
   const [isHovered, setIsHovered] = useState(false); // 新增状态来控制鼠标悬停状态
+  const provider = new ethers.BrowserProvider(window.ethereum)
+  const getSigner = async () => {
+    const signer = await provider.getSigner();
+    const a = await signer.getNonce();
+    console.log(signer, a, '获取用户签名');
+  }
+  getSigner();
 
   const handleConnect = async () => {
     try {
