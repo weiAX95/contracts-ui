@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet-async';
 import TransactionHistory from '@/components/TransactionHistory';
 import TokenTransferForm from '@/components/TokenTransferForm';
 import TokenPurchase from '@/components/TokenPurchase';
+import { useAccount, useEnsName } from 'wagmi'
 
 const NETWORKS = {
   '0x1': 'Ethereum Mainnet',
@@ -21,6 +22,10 @@ const NETWORKS = {
 };
 
 const HomePage = () => {
+  console.log(useAccount());
+  const { address } = useAccount()
+  const { data, error, status: walletStatus } = useEnsName({ address })
+  console.log(data, error, walletStatus);
   const [showTransactions, setShowTransactions] = useState(false);
   const [networkStatus, setNetworkStatus] = useState({
     isConnected: false,

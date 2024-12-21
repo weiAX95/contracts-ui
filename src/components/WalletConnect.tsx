@@ -1,8 +1,12 @@
 import React from 'react';
-import { useAccount, useConnect, useDisconnect, useBalance, useContractRead } from 'wagmi';
+import { useAccount, useConnect, useDisconnect, useBalance, useContractRead, useWriteContract } from 'wagmi';
 import { injected } from 'wagmi/connectors';
 import { Wallet, LogOut, Coins } from 'lucide-react';
-import YiDengToken from '@/abi/YiDengToken.json';
+import { YiDengToken__factory } from '../abi/index';
+import YiDengToken from '../abi/YiDengToken.json';
+import {
+  useBlockNumber
+} from 'wagmi'
 
 const WalletConnect = () => {
   const { address, isConnected } = useAccount();
@@ -10,7 +14,19 @@ const WalletConnect = () => {
   const { disconnect } = useDisconnect();
   const { data: balance } = useBalance({
     address: address,
+    query: {
+      refetchInterval: 10000 // 每秒轮询
+    },
   });
+
+  // useBlockNumber({ chainId: 123 })
+  // const { data, error,  isSuccess } = useWriteContract({
+  //   // addressOrName: '0xYourContractAddress', // 合约地址（如果已经部署）
+  //   contractInterface: YiDengToken, // 合约的ABI
+  //   functionName: 'deploy', // 部署函数名称，假设你合约有部署函数
+  //   args: ['0x608060405260405161083e38038061083e833981016040819052610...'], // 部署合约的字节码
+  // })
+  // console.log(data, error, isLoading, isSuccess, write);
 
   const handleConnect = async () => {
     try {

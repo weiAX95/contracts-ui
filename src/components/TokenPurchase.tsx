@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 
+// Import everything
+import { ethers } from "ethers";
+
+// Import just a few select items
+import { BrowserProvider, parseUnits } from "ethers";
+
+// Import from a specific export
+// import { HDNodeWallet } from "ethers/wallet";
 const TokenPurchase = () => {
+    console.log(ethers);
     const [formData, setFormData] = useState({
         ethAmount: '',
         tokenAmount: '',

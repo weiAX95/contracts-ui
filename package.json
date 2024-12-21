@@ -32,7 +32,7 @@
     "@welldone-software/why-did-you-render": "^8.0.3",
     "clsx": "^2.1.1",
     "dotenv-webpack": "^8.1.0",
-    "ethers": "^5.7.2",
+    "ethers": "^6.13.4",
     "immer": "^10.1.1",
     "jotai": "^2.10.1",
     "jotai-immer": "^0.4.1",
