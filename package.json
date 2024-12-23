@@ -6,7 +6,7 @@
     "client:dev": "webpack --mode development",
     "client:server": "webpack serve --mode development",
     "client:prod": "webpack --mode production",
-    "test": "jest --collectCoverage --reporters default jest-stare --passWithNoTests",
+    "test": "jest --collectCoverage --reporters default jest-stare  --passWithNoTests",
     "lint:fix": "tsc --noEmit & eslint ./src --ext .ts,.tsx --fix",
     "lint": "eslint . --ext .ts,.tsx",
     "test:e2e": "cypress open",
