@@ -2,6 +2,11 @@ import { createConfig, http } from 'wagmi';
 import { mainnet, goerli } from 'wagmi/chains';
 import { injected } from 'wagmi/connectors';
 
+declare module 'wagmi' {
+  interface Register {
+    config: typeof config
+  }
+}
 // 定义 Hardhat 本地网络
 const hardhat = {
   id: 31337,

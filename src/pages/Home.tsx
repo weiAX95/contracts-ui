@@ -6,6 +6,7 @@ import TransactionHistory from '@/components/TransactionHistory';
 import TokenTransferForm from '@/components/TokenTransferForm';
 import TokenPurchase from '@/components/TokenPurchase';
 import MintCertificate from '@/components/NFT';
+import { useAccount, useEnsName } from 'wagmi';
 
 const NETWORKS = {
   '0x1': 'Ethereum Mainnet',
@@ -22,93 +23,96 @@ const NETWORKS = {
 };
 
 const HomePage = () => {
-  const [showTransactions, setShowTransactions] = useState(false);
-  const [networkStatus, setNetworkStatus] = useState({
-    isConnected: false,
-    chainId: null as string | null,
-    networkName: '',
-    blockNumber: null as number | null,
-  });
+  // const { address } = useAccount()
+  // const { data, error, status: walletStatus } = useEnsName({ address })
+  // console.log(data, error, walletStatus);
+  // const [showTransactions, setShowTransactions] = useState(false);
+  // const [networkStatus, setNetworkStatus] = useState({
+  //   isConnected: false,
+  //   chainId: null as string | null,
+  //   networkName: '',
+  //   blockNumber: null as number | null,
+  // });
 
-  const toggleTransactions = () => {
-    setShowTransactions(!showTransactions);
-  };
+  // const toggleTransactions = () => {
+  //   setShowTransactions(!showTransactions);
+  // };
 
   useEffect(() => {
-    const checkNetwork = async () => {
-      if (window.ethereum) {
-        try {
-          // 获取当前chainId
-          const chainId = (await window.ethereum.request({
-            method: 'eth_chainId',
-          })) as keyof typeof NETWORKS;
-          // 获取当前区块
-          const blockNumber = await window.ethereum.request({ method: 'eth_blockNumber' });
-          // 获取账户以检查是否已连接
-          const accounts = await window.ethereum.request({ method: 'eth_accounts' });
+    // const checkNetwork = async () => {
+    //   if (window.ethereum) {
+    //     try {
+    //       // 获取当前chainId
+    //       const chainId = (await window.ethereum.request({
+    //         method: 'eth_chainId',
+    //       })) as keyof typeof NETWORKS;
+    //       // 获取当前区块
+    //       const blockNumber = await window.ethereum.request({ method: 'eth_blockNumber' });
+    //       // 获取账户以检查是否已连接
+    //       const accounts = await window.ethereum.request({ method: 'eth_accounts' });
 
-          setNetworkStatus({
-            isConnected: accounts.length > 0,
-            chainId,
-            networkName: NETWORKS[chainId] || '未知网络',
-            blockNumber: parseInt(blockNumber, 16),
-          });
-        } catch (error) {
-          console.error('获取网络状态失败:', error);
-          setNetworkStatus({
-            isConnected: false,
-            chainId: null,
-            networkName: '',
-            blockNumber: null,
-          });
-        }
-      }
-    };
+    //       setNetworkStatus({
+    //         isConnected: accounts.length > 0,
+    //         chainId,
+    //         networkName: NETWORKS[chainId] || '未知网络',
+    //         blockNumber: parseInt(blockNumber, 16),
+    //       });
+    //     } catch (error) {
+    //       console.error('获取网络状态失败:', error);
+    //       setNetworkStatus({
+    //         isConnected: false,
+    //         chainId: null,
+    //         networkName: '',
+    //         blockNumber: null,
+    //       });
+    //     }
+    //   }
+    // };
 
     // 初始检查
-    checkNetwork();
+    // checkNetwork();
 
     // 监听网络变化
-    if (window.ethereum) {
-      window.ethereum.on('chainChanged', () => {
-        checkNetwork();
-      });
+    // if (window.ethereum) {
+    //   window.ethereum.on('chainChanged', () => {
+    //     checkNetwork();
+    //   });
 
-      // 监听账户变化
-      window.ethereum.on('accountsChanged', () => {
-        checkNetwork();
-      });
-    }
+    //   // 监听账户变化
+    //   window.ethereum.on('accountsChanged', () => {
+    //     checkNetwork();
+    //   });
+    // }
 
     // 清理监听器
-    return () => {
-      if (window.ethereum) {
-        window.ethereum.removeListener('chainChanged', checkNetwork);
-        window.ethereum.removeListener('accountsChanged', checkNetwork);
-      }
-    };
+    // return () => {
+    //   if (window.ethereum) {
+    //     window.ethereum.removeListener('chainChanged', checkNetwork);
+    //     window.ethereum.removeListener('accountsChanged', checkNetwork);
+    //   }
+    // };
   }, []);
 
-  const getStatusDisplay = () => {
-    if (!window.ethereum) {
-      return {
-        text: '未安装钱包',
-        class: 'bg-red-100 text-red-700',
-      };
-    }
-    if (!networkStatus.isConnected) {
-      return {
-        text: '未连接',
-        class: 'bg-yellow-100 text-yellow-700',
-      };
-    }
-    return {
-      text: '已连接',
-      class: 'bg-green-100 text-green-700',
-    };
-  };
+  // const getStatusDisplay = () => {
+  //   if (!window.ethereum) {
+  //     return {
+  //       text: '未安装钱包',
+  //       class: 'bg-red-100 text-red-700',
+  //     };
+  //   }
+  //   if (!networkStatus.isConnected) {
+  //     return {
+  //       text: '未连接',
+  //       class: 'bg-yellow-100 text-yellow-700',
+  //     };
+  //   }
+  //   return {
+  //     text: '已连接',
+  //     class: 'bg-green-100 text-green-700',
+  //   };
+  // };
 
-  const status = getStatusDisplay();
+  // const status = getStatusDisplay();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -127,7 +131,7 @@ const HomePage = () => {
           <WalletConnect />
         </div>
       </nav>
-      <MintCertificate />
+      {/* <MintCertificate /> */}
       {/* 主要内容区域 */}
       <main className="max-w-7xl mx-auto p-4 sm:p-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -139,7 +143,7 @@ const HomePage = () => {
                 <span className="mr-2">💎</span>
                 Token信息
               </h2>
-              <TokenInfo />
+              {/* <TokenInfo /> */}
             </div>
             {/* 代币购买区域 */}
             <div className="bg-white rounded-lg shadow-sm p-6">
@@ -147,7 +151,7 @@ const HomePage = () => {
                 <span className="mr-2">🎯</span>
                 代币购买
               </h2>
-              <TokenPurchase />
+              {/* <TokenPurchase /> */}
             </div>
             {/* 转账区域 */}
             <div className="bg-white rounded-lg shadow-sm p-6">
@@ -155,12 +159,12 @@ const HomePage = () => {
                 <span className="mr-2">💸</span>
                 转账
               </h2>
-              <TokenTransferForm />
+              {/* <TokenTransferForm /> */}
             </div>
             {/* 交易历史区域 */}
-            <div className={`transition-all duration-300 ${showTransactions ? 'block' : 'hidden'}`}>
-              <TransactionHistory />
-            </div>
+            {/* <div className={`transition-all duration-300 ${showTransactions ? 'block' : 'hidden'}`}> */}
+            {/* <TransactionHistory /> */}
+            {/* </div> */}
           </div>
 
           {/* 右侧面板 */}
@@ -171,7 +175,7 @@ const HomePage = () => {
                 <span className="mr-2">⚡</span>
                 快速操作
               </h2>
-              <div className="space-y-4">
+              {/* <div className="space-y-4">
                 <button
                   onClick={toggleTransactions}
                   className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition-colors flex items-center justify-center"
@@ -182,7 +186,7 @@ const HomePage = () => {
                   <span className="mr-2">⚙️</span>
                   账户设置
                 </button>
-              </div>
+              </div> */}
             </div>
 
             {/* 系统状态 */}
@@ -194,11 +198,11 @@ const HomePage = () => {
               <div className="space-y-4">
                 <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
                   <span className="text-gray-600">网络状态</span>
-                  <span className={`px-2 py-1 rounded-full text-sm ${status.class}`}>
-                    {status.text}
-                  </span>
+                  {/* <span className={`px-2 py-1 rounded-full text-sm ${status.class}`}> */}
+                  {/* {status.text} */}
+                  {/* </span> */}
                 </div>
-                {networkStatus.isConnected && (
+                {/* {networkStatus.isConnected && (
                   <>
                     <div className="flex justify-between items-center p-3 bg-gray-50 rounded">
                       <span className="text-gray-600">当前网络</span>
@@ -209,7 +213,7 @@ const HomePage = () => {
                       <span className="font-mono text-sm">#{networkStatus.blockNumber}</span>
                     </div>
                   </>
-                )}
+                )} */}
               </div>
             </div>
           </div>

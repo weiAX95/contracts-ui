@@ -1,124 +1,121 @@
-import React, { useState } from 'react';
-import { useAccount, useConnect, useDisconnect, useBalance, useContractRead } from 'wagmi';
+import React, { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
-import { injected } from 'wagmi/connectors';
 import { Wallet, LogOut, Coins } from 'lucide-react';
-import YiDengToken from '@/abi/YiDengToken.json';
+import { YiDengToken__factory } from '../abi/index';
+import YiDengToken from '../abi/YiDengToken.json';
 
 const WalletConnect = () => {
-  const { address, isConnected } = useAccount();
-  const { connectAsync } = useConnect();
-  const { disconnect } = useDisconnect();
-  const { data: balance } = useBalance({
-    address: address,
-  });
-
-  const [isHovered, setIsHovered] = useState(false); // 新增状态来控制鼠标悬停状态
-  const provider = new ethers.BrowserProvider(window.ethereum)
-  const getSigner = async () => {
-    const signer = await provider.getSigner();
-    const a = await signer.getNonce();
-    console.log(signer, a, '获取用户签名');
-  }
-  getSigner();
-
-  const handleConnect = async () => {
-    try {
-      if (typeof window.ethereum === 'undefined') {
-        alert('请先安装 MetaMask!');
-        window.open('https://metamask.io/download/', '_blank');
-        return;
+  // 使用 useState 来存储 provider 和 signer
+  const [provider, setProvider] = useState(null);
+  const [signer, setSigner] = useState('');
+  const [balance, setBalance] = useState('');
+  useEffect(() => {
+    // 这里定义一个异步函数处理与 MetaMask 的连接
+    // const initializeProvider = async () => {
+    //   if (window.ethereum == null) {
+    //     console.log("MetaMask not installed; using read-only defaults");
+    //     // 使用默认的只读 provider
+    //     const defaultProvider = ethers.getDefaultProvider();
+    //     console.log(defaultProvider, "defaultProvider");
+    //     // setProvider(defaultProvider);
+    //   } else {
+    //     // 使用 Web3Provider 来连接 MetaMask
+    //     const web3Provider = new ethers.BrowserProvider(window.ethereum)
+    //     console.log(web3Provider, "web3Provider");
+    //     // setProvider(web3Provider);
+    //     const userSigner = await web3Provider.getSigner();
+    //     console.log(userSigner, "userSigner");
+    //     setSigner(userSigner.address);
+    //   }
+    // };
+    // 监听账户变化
+    window.ethereum.on("accountsChanged", (accounts: string[]) => {
+      if (accounts.length === 0) {
+        console.log("Disconnected");
+        setSigner("");
+      } else {
+        console.log("Connected:", accounts[0]);
+        setSigner(accounts[0]);
       }
-      await connectAsync({ connector: injected() });
-    } catch (error) {
-      console.error('Failed to connect:', error);
-      alert('连接失败，请确保已安装并解锁 MetaMask');
     }
-  };
-
-  const contractAddress = '0x5FbDB2315678afecb367f032d93F642f64180aa3';
-  const { data: tokenBalance } = useContractRead({
-    address: contractAddress,
-    abi: YiDengToken,
-    functionName: 'balanceOf',
-    args: address ? [address] : undefined,
-    chainId: 31337,
-  });
-
-  if (isConnected) {
-    return (
-      <div className="max-w-full  bg-white rounded-xl shadow-lg overflow-hidden">
-        <div className="p-1 space-y-6 float-left">
-          {isHovered && <div className="flex items-center justify-between border-b pb-4">
-            <div>
-              <h2 className="text-xl font-semibold text-gray-800">Wallet Status</h2>
-              <p className="text-sm text-gray-500">Connected to MetaMask</p>
-            </div>
-            <Wallet className="h-8 w-8 text-blue-500" />
-          </div>}
-
-          <div
-            className="space-y-4"
-            onMouseEnter={() => setIsHovered(true)} // 鼠标移入时
-            onMouseLeave={() => setIsHovered(false)} // 鼠标移出时
-          >
-            <div className="bg-gray-50 p-2 rounded-lg">
-              <p className="text-sm font-medium text-gray-600">Account Address</p>
-              <p className="font-mono text-sm mt-1 text-gray-800 break-all">
-                {isHovered ? address : `${address?.slice(0, 6)}...${address?.slice(-4)}`}
-              </p>
-            </div>
-
-            {balance && isHovered && (
-              <div className="bg-blue-50 p-4 rounded-lg">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-blue-600">ETH Balance</p>
-                    <p className="font-mono text-lg mt-1 text-blue-800">
-                      {parseFloat(balance.formatted).toFixed(4)} {balance.symbol}
-                    </p>
-                  </div>
-                  <Coins className="h-8 w-8 text-blue-500" />
-                </div>
-              </div>
-            )}
-
-            {tokenBalance != null && isHovered && (
-              <div className="bg-indigo-50 p-4 rounded-lg">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm font-medium text-indigo-600">YiDeng Token Balance</p>
-                    <p className="font-mono text-lg mt-1 text-indigo-800">
-                      {tokenBalance.toString()} YD
-                    </p>
-                  </div>
-                  <Coins className="h-8 w-8 text-indigo-500" />
-                </div>
-              </div>
-            )}
-          </div>
-
-          {isHovered && <button
-            onClick={() => disconnect()}
-            className="w-full flex items-center justify-end gap-2 px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium"
-          >
-            <LogOut className="h-5 w-5" />
-            Disconnect Wallet
-          </button>}
-        </div>
-      </div>
     );
+    // initializeProvider();
+  }, []); // 依赖数组为空，确保只在组件挂载时执行一次
+  function maskAddress(address: string) {
+    // 确保地址是以太坊地址格式
+    if (!/^0x[a-fA-F0-9]{40}$/.test(address)) {
+      throw new Error("Invalid Ethereum address format");
+    }
+
+    // 替换地址中间的字符为**
+    const maskedAddress = `${address.slice(0, 6)}...${address.slice(-4)}`;
+
+    return maskedAddress;
   }
 
+  function handleConnect() {
+
+    window.ethereum
+      .request({ method: "eth_requestAccounts" })
+      .then((accounts: string[]) => {
+
+        console.log("Connected:", accounts[0]);
+        setSigner(accounts[0]);
+        return accounts[0]
+      }).then((res: string) => {
+        window.ethereum.request({
+          method: "eth_getBalance",
+          params: [res, 'latest'],
+        }).then((accounts: string) => {
+          // console.log("eth_getBalance:", ethers.formatEther(accounts));
+          // setSigner(accounts[0]);
+          setBalance(ethers.formatEther(accounts));
+        });
+      })
+      .catch((error: Error) => {
+        console.error("Connect failed:", error);
+      });
+  }
+
+  // 连接 MetaMask
+
+  function handleExit() {
+    // 断开 MetaMask 连接
+    setSigner("");
+    // window.ethereum
+    //   .request({ method: "eth_accounts" })
+    //   .then((accounts: string[]) => {
+    //     if (accounts.length === 0) {
+    //       console.log("Disconnected");
+    //       setSigner("");
+    //     }
+    //   })
+    //   .catch((error: Error) => {
+    //     console.error("Disconnect failed:", error);
+    //   }
+    //   );
+  }
+  // // 示例调用
+  // const address = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; // 示例地址
+  // console.log(maskAddress(address)); // 输出: 0x5Fb...aa3
   return (
-    <div className="max-w-full mx-auto flex items-center justify-end min-h-[80px] mr-2">
-      <button
-        onClick={handleConnect}
-        className="flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors font-xs shadow-lg"
-      >
-        <Wallet className="h-5 w-5" />
-        Connect Wallet
-      </button>
+    <div className='flex items-center justify-center h-screen'>
+      {signer ? (
+        <div>
+
+          <div className='flex items-center justify-center'>
+            <div>当前用户地址：{maskAddress(signer)}</div>
+            <div><button className='bg-gradient-to-r from-green-400 via-blue-500 to-purple-500 text-white font-bold py-2 px-4 rounded-full shadow-lg transform transition-transform hover:scale-105' onClick={handleExit}>退出连接</button></div>
+          </div>
+          <div>当前用户余额：{balance}</div>
+        </div>
+      ) : (
+        <div>
+          <button className='bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white font-bold py-2 px-4 rounded-full shadow-lg transform transition-transform hover:scale-105' onClick={handleConnect}>
+            Connect MetaMask
+          </button>
+        </div>
+      )}
     </div>
   );
 };
