@@ -143,7 +143,7 @@ const HomePage = () => {
                 <span className="mr-2">💎</span>
                 Token信息
               </h2>
-              {/* <TokenInfo /> */}
+              <TokenInfo />
             </div>
             {/* 代币购买区域 */}
             <div className="bg-white rounded-lg shadow-sm p-6">
