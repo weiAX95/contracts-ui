@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useWriteContract } from 'wagmi';
 import CourseCertificate from '@/abi/CourseCertificate.json';
+import { ethers } from 'ethers';
 
 const contractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
 
@@ -12,6 +13,7 @@ function MintCertificate() {
 
   const { writeContract, isPending, error, data, isSuccess } = useWriteContract();
 
+  // 获取当前区块高度
   const handleMint = async () => {
     if (!student || !courseId || !metadataURI) {
       alert('请确保所有输入项都填写完整！');
@@ -32,7 +34,7 @@ function MintCertificate() {
         abi: CourseCertificate,
         functionName: 'mintCertificate',
         args: [student, formattedCourseId, metadataURI],
-        nonce: blockNumber,
+        nonce: 6,
       });
 
       alert('交易已提交，请等待区块确认！');
